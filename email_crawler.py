@@ -59,7 +59,7 @@ def crawl(keywords):
 	# Google search results are paged with 10 urls each. There are also adurls
 	for page_index in range(0, MAX_SEARCH_RESULTS, 10):
 		query = {'q': keywords}
-		url = 'http://www.google.com/search?' + urllib.urlencode(query) + '&start=' + str(page_index)
+		url = 'https://www.google.com/search?' + urllib.urlencode(query) + '&start=' + str(page_index)
 		data = retrieve_html(url)
 		# 	print("data: \n%s" % data)
 		for url in google_url_regex.findall(data):
